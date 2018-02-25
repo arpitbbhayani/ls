@@ -1,7 +1,7 @@
 /*
 *
 *	Author	: Arpit Bhayani
-*	E-mail 	: arpit.bhayani@students.iiit.ac.in
+*	E-mail 	: arpit.b.bhayani@gmail.com
 *	Roll no.: 201305515
 *
 */
@@ -18,13 +18,13 @@
 *			S : Sort by file size
 *			t : Sort by modification time
 *	Usage:
-*		$ ./myls ­lS 
-*		$ ./myls ­l ­ta
-*		$ ./myls  lt
-*		$ ./myls  R  ­lt
-*		$ ./myls  l <file/directory>
-*		$ ./myls  l ­t <file/directory>
-*		$ ./myls  lt > output.txt
+*		$ ./myls -­lS 
+*		$ ./myls -­l­ta
+*		$ ./myls -lt
+*		$ ./myls -R­lt
+*		$ ./myls -l <file/directory>
+*		$ ./myls -l­t <file/directory>
+*		$ ./myls -lt > output.txt
 *	Output format:
 *		Output  should  be  similar  to  the  output  provided  by  “ls” 
 *		command. The  output is  in multiple columns  (normal behavior) but 
@@ -73,14 +73,14 @@ int main(int argc , char * argv[]) {
 			default:
 			    	printf ("?? getopt returned character code 0%o ??\n", c);
 		}
-    	}
-    	if (optind < argc) {
+    }
+    if (optind < argc) {
 		arg = (char **) calloc ( (argc - optind) , sizeof(char *) );
 		count_arg = 0;
 		while (optind < argc) {
 			arg[count_arg++] = argv[optind++];
 		}
-    	}
+    }
 	
 	ls(opt , arg , count_arg);
 
